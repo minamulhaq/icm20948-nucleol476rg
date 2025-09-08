@@ -1,0 +1,15 @@
+{
+    "cmake.cmakePath": "cube-cmake",
+    "cmake.exportCompileCommandsFile": true,
+    "cmake.configureArgs": [
+        "-DCMAKE_COMMAND=cube-cmake"
+    ],
+    "cmake.preferredGenerators": [
+        "Ninja"
+    ],
+    "files.associations": {
+        "main.h": "c",
+        "icm20948.h": "c",
+        "icm20948_driver.h": "c"
+    }
+}
