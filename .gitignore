@@ -1,0 +1,47 @@
+# Build artifacts
+build/
+Debug/
+*.elf
+*.bin
+*.map
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.ninja
+
+# IDE specific files
+*.suo
+*.sln
+*.user
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# STM32CubeMX specific files
+*.list
+
+# Generated object files and dependencies
+*.o
+*.obj
+*.d
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Potentially ignore third-party libraries
+# Uncomment if you use submodules or external libraries within these folders
+# lib/
+# vendor/
+
+.cortex-debug*
+*DS_Store*
