@@ -1,13 +1,17 @@
-# Drivers/ICM20948/CMakeLists.txt
+file(GLOB src_icm20948
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.c"
+)
 
 set(inc_dir_icm20948
-    ${CMAKE_CURRENT_SOURCE_DIR}   # points to Drivers/ICM20948
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_library(lib_icm20948 INTERFACE)
-
-# Expose the header folder so other targets can #include "icm20948.h"
-target_include_directories(lib_icm20948 INTERFACE
-    ${inc_dir_icm20948}
-    ${MX_Include_Dirs}
+add_library(lib_icm20948 STATIC
+    ${src_icm20948}
 )
+
+target_include_directories(lib_icm20948 PUBLIC
+    ${inc_dir_icm20948}   # driver headers
+)
+# NO HAL dependency
+

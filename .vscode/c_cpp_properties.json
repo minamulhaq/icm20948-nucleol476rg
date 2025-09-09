@@ -1,12 +1,50 @@
 {
     "configurations": [
         {
-            "name": "STM32",
+            "name": "STM32-Windows",
+            "includePath": [
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Drivers/STM32L4xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32L4xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Drivers/ICM20948",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "STM32L476xx",
+                "USE_HAL_DRIVER",
+                "_DEBUG"
+            ],
+            "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.2 rel1/bin/arm-none-eabi-gcc-ar.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "compileCommands": "${workspaceFolder}/build/Debug/compile_commands.json"
+        },
+        {
+            "name": "STM32-macOS",
+            "includePath": [
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Drivers/STM32L4xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32L4xx/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Drivers/ICM20948",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "STM32L476xx",
+                "USE_HAL_DRIVER",
+                "_DEBUG"
+            ],
+            "compilerPath": "/usr/local/gcc-arm-none-eabi/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "compileCommands": "${workspaceFolder}/build/Debug/compile_commands.json",
             "macFrameworkPath": [
                 "/System/Library/Frameworks",
                 "/Library/Frameworks"
-            ],
-            "compileCommands": "${workspaceFolder}/build/Debug/compile_commands.json"
+            ]
         }
     ],
     "version": 4

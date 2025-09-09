@@ -16,7 +16,8 @@
                 {
                     "imageFileName": "${command:st-stm32-ide-debug-launch.get-projects-binary-from-context1}"
                 }
-            ]
+            ],
+            "preLaunchTask": "Build + Flash"
         },
         {
             "name": "Build & Debug Microcontroller - ST-Link",
@@ -72,6 +73,16 @@
             ],
             /* If you use external loader, add additional arguments */
             //"serverArgs": ["--extload", "path/to/ext/loader.stldr"],
+        },
+        {
+            "name": "Flash STM32",
+            "type": "cppvsdbg", // Dummy type just to trigger preLaunchTask
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "preLaunchTask": "Build + Flash",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "internalConsoleOptions": "neverOpen"
         }
     ]
 }

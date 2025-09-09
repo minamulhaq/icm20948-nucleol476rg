@@ -8,8 +8,16 @@
         "Ninja"
     ],
     "files.associations": {
+        "*.py": "python",
         "main.h": "c",
         "icm20948.h": "c",
-        "icm20948_driver.h": "c"
+        "icm20948_driver.h": "c",
+        "stm32l4xx_hal.h": "c",
+        "nucleo_icm20948_i2c_interface.h": "c",
+        "i2c.h": "c",
+        "usart.h": "c",
+        "message_printer.h": "c",
+        "stdio.h": "c",
+        "i2c_bus_scanner.h": "c"
     }
 }

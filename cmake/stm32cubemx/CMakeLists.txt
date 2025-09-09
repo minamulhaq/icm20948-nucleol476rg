@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 # STM32CubeMX generated symbols (macros)
-set(MX_Defines_Syms 
-	USE_HAL_DRIVER 
+set(MX_Defines_Syms
+	USE_HAL_DRIVER
 	STM32L476xx
     $<$<CONFIG:Debug>:DEBUG>
 )
@@ -15,6 +15,7 @@ set(MX_Include_Dirs
     ${CMAKE_SOURCE_DIR}/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy
     ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32L4xx/Include
     ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Include
+    ${CMAKE_SOURCE_DIR}/Drivers/ICM20948
 )
 
 # STM32CubeMX generated application sources
@@ -28,6 +29,9 @@ set(MX_Application_Src
     ${CMAKE_SOURCE_DIR}/Core/Src/sysmem.c
     ${CMAKE_SOURCE_DIR}/Core/Src/syscalls.c
     ${CMAKE_SOURCE_DIR}/startup_stm32l476xx.s
+    ${CMAKE_SOURCE_DIR}/Core/Src/nucleo_icm20948_i2c_interface.c
+    ${CMAKE_SOURCE_DIR}/Core/Src/message_printer.c
+    ${CMAKE_SOURCE_DIR}/Core/Src/i2c_bus_scanner.c
 )
 
 # STM32 HAL/LL Drivers
@@ -61,9 +65,9 @@ set(MX_LINK_DIRS
 
 )
 # Project static libraries
-set(MX_LINK_LIBS 
+set(MX_LINK_LIBS
     STM32_Drivers
-    
+
 )
 # Interface library for includes and symbols
 add_library(stm32cubemx INTERFACE)
